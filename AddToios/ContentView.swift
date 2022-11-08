@@ -25,8 +25,12 @@ struct ContentView: View {
 struct FontPicker: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> FlutterViewController {
-        let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
 
+        var appDelegate = AddToiosApp.sharedInstance
+        
+            let flutterViewController = FlutterViewController.init(
+              engine: appDelegate.engine, nibName: nil, bundle: nil)
+        
         return flutterViewController
     }
     
